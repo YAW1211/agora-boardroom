@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { LandingSections } from "@/components/LandingSections";
 import { TopNav } from "@/components/TopNav";
+import DecryptedText from "@/components/react-bits/DecryptedText";
 import GradientText from "@/components/react-bits/GradientText";
 import Hyperspeed from "@/components/react-bits/Hyperspeed";
 
@@ -32,8 +33,17 @@ export function LandingHero() {
             <GradientText
               animationSpeed={4}
               colors={["#f0abfc", "#93c5fd", "#67e8f9", "#a78bfa", "#f0abfc"]}
+              className="leading-[1.15]"
             >
-              AGORA
+              <DecryptedText
+                text="AGORA"
+                speed={120}
+                maxIterations={14}
+                sequential
+                revealDirection="center"
+                characters="AGORA_SIGNAL"
+                animateOn="view"
+              />
             </GradientText>
           </p>
           <h1 className="max-w-3xl text-5xl font-semibold leading-[1.08] tracking-normal text-white sm:text-6xl xl:text-7xl">
