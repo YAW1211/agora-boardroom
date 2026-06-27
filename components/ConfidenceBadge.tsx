@@ -7,7 +7,7 @@ export function ConfidenceBadge({ score }: { score: number }) {
         : "border-amber-300/20 bg-amber-300/10 text-amber-100";
 
   return (
-    <span className={`rounded-full border px-2.5 py-1 text-xs font-medium ${tone}`}>
+    <span className={`rounded-md border px-2 py-0.5 text-[11px] font-medium ${tone}`}>
       {score}% confidence
     </span>
   );

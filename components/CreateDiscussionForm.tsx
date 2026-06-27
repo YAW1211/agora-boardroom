@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { AgentAvatar } from "@/components/AgentAvatar";
 import { aiMembers, discussionModes, discussionStyles } from "@/data/mock-data";
 
 export function CreateDiscussionForm() {
@@ -96,12 +97,7 @@ export function CreateDiscussionForm() {
                   }`}
                 >
                   <span className="flex items-center gap-3">
-                    <span
-                      className="grid h-10 w-10 place-items-center rounded-xl text-sm font-bold text-slate-950"
-                      style={{ backgroundColor: member.color }}
-                    >
-                      {member.initials}
-                    </span>
+                    <AgentAvatar agent={member} size="md" />
                     <span>
                       <span className="block font-semibold text-white">{member.name}</span>
                       <span className="block text-xs text-slate-400">{member.role}</span>

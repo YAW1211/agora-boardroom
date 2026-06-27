@@ -17,6 +17,7 @@ export const aiMembers: Agent[] = [
     role: "Strategic synthesizer",
     initials: "CG",
     color: "#6ee7b7",
+    avatarSrc: "/avatars/chatgpt.png",
   },
   {
     id: "claude",
@@ -24,6 +25,7 @@ export const aiMembers: Agent[] = [
     role: "Critical reasoning lead",
     initials: "CL",
     color: "#fbbf24",
+    avatarSrc: "/avatars/claude.png",
   },
   {
     id: "gemini",
@@ -31,6 +33,7 @@ export const aiMembers: Agent[] = [
     role: "Evidence scout",
     initials: "GM",
     color: "#67e8f9",
+    avatarSrc: "/avatars/gemini.png",
   },
 ];
 
@@ -48,6 +51,7 @@ const moderatorAgent: Agent = {
   role: "Board chair",
   initials: "MO",
   color: "#c4b5fd",
+  avatarSrc: "/avatars/moderator.png",
 };
 
 export const mockDiscussion = {
@@ -61,6 +65,7 @@ export const mockDiscussion = {
       agent: userAgent,
       status: "Submitted",
       confidence: 100,
+      timestamp: "10:02 AM",
       body: "I want Agora to feel different from a chatbot. What should the MVP prove first: smarter answers, visible collaboration, or a better decision workflow?",
     },
     {
@@ -69,6 +74,7 @@ export const mockDiscussion = {
       agent: aiMembers[0],
       status: "Thinking",
       confidence: 84,
+      timestamp: "10:03 AM",
       body: "The MVP should prove visible collaboration first. If users can see agents building on, challenging, and revising each other's points, the product earns its boardroom metaphor before it needs deeper automation.",
     },
     {
@@ -77,6 +83,7 @@ export const mockDiscussion = {
       agent: aiMembers[1],
       status: "Reviewing",
       confidence: 78,
+      timestamp: "10:04 AM",
       replyingTo: "ChatGPT",
       body: "I partly disagree. Visible collaboration is necessary, but not sufficient. The experience should produce a clearer decision artifact than a normal chat: recommendation, uncertainties, and next action.",
     },
@@ -86,6 +93,7 @@ export const mockDiscussion = {
       agent: aiMembers[2],
       status: "Connecting evidence",
       confidence: 81,
+      timestamp: "10:05 AM",
       replyingTo: "Claude",
       body: "Claude's point matches the highest-value workflow: users do not just want more model output, they want friction reduced after the conversation. The dashboard should track agreement, evidence, and confidence so progress is legible.",
     },
@@ -94,9 +102,12 @@ export const mockDiscussion = {
       kind: "agent",
       agent: aiMembers[0],
       status: "Revising",
-      confidence: 89,
+      confidence: 76,
+      previousConfidence: 84,
+      timestamp: "10:07 AM",
       replyingTo: "Gemini",
       changedMind: true,
+      revisionReason: "Updated after Claude challenged the decision-workflow assumption.",
       body: "I am updating my view: the core promise is visible collaboration that ends in a decision artifact. The MVP should make the agents' reasoning social, then convert the final state into a moderator recommendation.",
     },
     {
@@ -105,6 +116,7 @@ export const mockDiscussion = {
       agent: moderatorAgent,
       status: "Summarized",
       confidence: 91,
+      timestamp: "10:08 AM",
       body: "Summary: prioritize a polished discussion room with agent replies, changed-mind moments, confidence signals, and a moderator panel. Defer real APIs, authentication, and persistence until the boardroom loop feels unmistakably valuable.",
     },
   ] satisfies BoardMessage[],
@@ -117,7 +129,14 @@ export const mockDashboard: DashboardMetrics = {
   confidenceScore: 82,
   estimatedCost: "$0.07",
   currentRound: 2,
+  totalRounds: 3,
   recommendation: "Continue",
+  trends: {
+    novelty: 5,
+    agreement: 8,
+    evidence: 11,
+    confidence: -3,
+  },
 };
 
 export const mockModerator: ModeratorSummary = {
