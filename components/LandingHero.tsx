@@ -21,7 +21,7 @@ export function LandingHero() {
 
       <TopNav />
 
-      <section className="relative mx-auto grid min-h-[min(700px,calc(100vh-6.5rem))] max-w-7xl content-center gap-8 rounded-3xl border border-white/10 bg-slate-950/42 px-5 py-6 shadow-[0_30px_120px_rgba(0,0,0,0.42)] backdrop-blur-[2px] sm:px-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(340px,0.7fr)] lg:items-center lg:px-10 xl:grid-cols-[minmax(0,1fr)_410px]">
+      <section className="relative mx-auto grid min-h-[min(700px,calc(100vh-6.5rem))] max-w-7xl content-center gap-8 px-5 py-6 sm:px-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(340px,0.7fr)] lg:items-center lg:px-10 xl:grid-cols-[minmax(0,1fr)_410px]">
         <div className="relative z-10 max-w-[680px]">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-sm text-slate-200 backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(103,232,249,0.9)]" />

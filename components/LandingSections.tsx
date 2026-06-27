@@ -163,11 +163,10 @@ export function LandingSections() {
         />
 
         <div className="relative mt-10 grid gap-4 lg:grid-cols-5">
-          <div className="absolute left-6 right-6 top-8 hidden h-px bg-gradient-to-r from-cyan-200/20 via-fuchsia-200/30 to-cyan-200/20 lg:block" />
           {roadmap.map((step) => (
             <article
               key={step.version}
-              className="landing-card relative rounded-2xl border border-white/10 bg-white/[0.045] p-5 transition hover:-translate-y-1 hover:border-cyan-200/30"
+              className="landing-card relative rounded-2xl bg-white/[0.045] p-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] transition hover:-translate-y-1 hover:bg-white/[0.065]"
             >
               <div className="relative z-10 mb-5 inline-flex rounded-full border border-cyan-200/20 bg-cyan-200/10 px-3 py-1 text-xs font-semibold text-cyan-100">
                 {step.version}
