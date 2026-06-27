@@ -2,6 +2,7 @@ import Link from "next/link";
 import { LandingSections } from "@/components/LandingSections";
 import { TopNav } from "@/components/TopNav";
 import DecryptedText from "@/components/react-bits/DecryptedText";
+import GradientText from "@/components/react-bits/GradientText";
 import Hyperspeed from "@/components/react-bits/Hyperspeed";
 
 const boardMembers = [
@@ -27,25 +28,31 @@ export function LandingHero() {
             <span className="inline-flex rounded-xl border border-cyan-200/10 bg-cyan-200/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">
               AI Boardroom
             </span>
-            <span className="inline-flex rounded-xl border border-fuchsia-200/10 bg-fuchsia-200/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-100/80">
+          </div>
+          <p className="mb-4 text-2xl font-black uppercase tracking-[0.18em] sm:text-3xl">
+            <GradientText animationSpeed={4} colors={["#67e8f9", "#a78bfa", "#f0abfc", "#67e8f9"]}>
               <DecryptedText
                 text="AGORA"
-                speed={140}
-                maxIterations={14}
+                speed={130}
+                maxIterations={16}
                 sequential
                 revealDirection="center"
                 characters="AGORA_SIGNAL"
                 animateOn="view"
               />
-            </span>
-          </div>
+            </GradientText>
+          </p>
           <h1 className="max-w-3xl text-5xl font-semibold leading-[1.08] tracking-normal text-white sm:text-6xl xl:text-7xl">
             Where AI
             <span className="block">
               Thinks{" "}
-              <span className="bg-gradient-to-r from-cyan-200 via-sky-400 to-violet-400 bg-clip-text text-transparent">
+              <GradientText
+                animationSpeed={3.5}
+                colors={["#67e8f9", "#38bdf8", "#60a5fa", "#8b5cf6", "#c084fc", "#67e8f9"]}
+                className="font-semibold"
+              >
                 Together
-              </span>
+              </GradientText>
             </span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
@@ -58,7 +65,7 @@ export function LandingHero() {
               className="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-cyan-300 to-violet-500 px-7 py-4 text-sm font-semibold text-slate-950 shadow-[0_18px_50px_rgba(34,211,238,0.24)] transition hover:brightness-110"
             >
               Start Discussion
-              <span aria-hidden="true">→</span>
+              <span aria-hidden="true">-&gt;</span>
             </Link>
             <Link
               href="/room"
