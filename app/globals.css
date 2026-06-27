@@ -76,6 +76,22 @@ textarea {
 .metric-fill {
   animation: metric-grow 720ms ease both;
   transform-origin: left;
+  transition: width 700ms ease;
+}
+
+.room-ambient-particles {
+  background-image:
+    radial-gradient(circle, rgba(103, 232, 249, 0.38) 0 1px, transparent 1.5px),
+    radial-gradient(circle, rgba(244, 114, 182, 0.24) 0 1px, transparent 1.5px);
+  background-position:
+    0 0,
+    3rem 4rem;
+  background-size:
+    9rem 9rem,
+    13rem 13rem;
+  opacity: 0.16;
+  animation: ambient-particles 18s linear infinite;
+  pointer-events: none;
 }
 
 .landing-card {
@@ -557,6 +573,15 @@ textarea {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes ambient-particles {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-3rem, 2rem, 0);
   }
 }
 

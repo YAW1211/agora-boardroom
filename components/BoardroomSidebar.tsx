@@ -2,10 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 import { AgentAvatar } from "@/components/AgentAvatar";
 import { BackLink } from "@/components/BackLink";
+import type { Agent } from "@/data/types";
 
 const channels = ["boardroom", "research", "decisions"];
 
-const members = [
+export type SidebarMember = Pick<Agent, "name" | "initials" | "color" | "avatarSrc"> & {
+  status: string;
+  activity: string;
+  confidence: number;
+};
+
+const defaultMembers: SidebarMember[] = [
   {
     name: "ChatGPT",
     status: "Thinking",
@@ -44,7 +51,7 @@ const members = [
   },
 ];
 
-export function BoardroomSidebar() {
+export function BoardroomSidebar({ members = defaultMembers }: { members?: SidebarMember[] }) {
   return (
     <aside className="glass-panel flex min-h-0 flex-col overflow-hidden border-r border-white/10 bg-slate-950/72 lg:rounded-l-2xl">
       <div className="border-b border-white/10 px-5 py-4">
