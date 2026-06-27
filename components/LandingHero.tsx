@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BrandSignalCard } from "@/components/BrandSignalCard";
+import { TopNav } from "@/components/TopNav";
 import DecryptedText from "@/components/react-bits/DecryptedText";
 import { GlassIcons } from "@/components/react-bits/GlassIcons";
 import Hyperspeed from "@/components/react-bits/Hyperspeed";
@@ -20,7 +20,9 @@ export function LandingHero() {
       <div className="absolute inset-0 bg-slate-950/38" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_30%,rgba(34,211,238,0.18),transparent_30rem),radial-gradient(circle_at_100%_12%,rgba(244,114,182,0.16),transparent_32rem)]" />
 
-      <section className="relative mx-auto grid min-h-[min(760px,calc(100vh-1.5rem))] max-w-7xl content-center gap-8 rounded-3xl border border-white/10 bg-slate-950/42 px-5 py-6 shadow-[0_30px_120px_rgba(0,0,0,0.42)] backdrop-blur-[2px] sm:px-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(340px,0.7fr)] lg:items-center lg:px-10 xl:grid-cols-[minmax(0,1fr)_410px]">
+      <TopNav />
+
+      <section className="relative mx-auto grid min-h-[min(700px,calc(100vh-6.5rem))] max-w-7xl content-center gap-8 rounded-3xl border border-white/10 bg-slate-950/42 px-5 py-6 shadow-[0_30px_120px_rgba(0,0,0,0.42)] backdrop-blur-[2px] sm:px-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(340px,0.7fr)] lg:items-center lg:px-10 xl:grid-cols-[minmax(0,1fr)_410px]">
         <div className="relative z-10 max-w-[680px]">
           <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-sm text-slate-200 backdrop-blur">
             <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(103,232,249,0.9)]" />
@@ -72,8 +74,6 @@ export function LandingHero() {
         </div>
 
         <div className="relative z-10 grid w-full max-w-[410px] gap-4 justify-self-end lg:mt-8 xl:mt-0">
-          <BrandSignalCard />
-
           <div className="glass-panel relative overflow-hidden rounded-2xl p-3 sm:p-4">
             <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200/70 to-transparent" />
             <div className="rounded-xl border border-white/10 bg-slate-950/70">
@@ -117,7 +117,7 @@ export function LandingHero() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-6 py-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+      <section id="history" className="mx-auto grid max-w-7xl gap-6 py-6 lg:grid-cols-[minmax(0,1fr)_340px]">
         <MagicBento />
         <aside className="glass-panel rounded-2xl p-5">
           <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200/75">
