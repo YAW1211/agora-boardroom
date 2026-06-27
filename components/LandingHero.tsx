@@ -23,51 +23,48 @@ export function LandingHero() {
 
       <section className="relative mx-auto grid min-h-[min(700px,calc(100vh-6.5rem))] max-w-7xl content-center gap-8 px-5 py-6 sm:px-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(340px,0.7fr)] lg:items-center lg:px-10 xl:grid-cols-[minmax(0,1fr)_410px]">
         <div className="relative z-10 max-w-[680px]">
-          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/8 px-3 py-2 text-sm text-slate-200 backdrop-blur">
-            <span className="h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_18px_rgba(103,232,249,0.9)]" />
-            Theme: Agora / The AI Boardroom
-          </div>
-          <div className="mb-4 flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-cyan-100/80">
-            <span className="rounded-full border border-cyan-200/20 bg-cyan-200/10 px-3 py-1">
-              AI Council Online
+          <div className="mb-7 flex flex-wrap items-center gap-3">
+            <span className="inline-flex rounded-xl border border-cyan-200/10 bg-cyan-200/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-200">
+              AI Boardroom
             </span>
-            <span className="rounded-full border border-fuchsia-200/20 bg-fuchsia-200/10 px-3 py-1 text-fuchsia-100/80">
-              Boardroom Signal Resolving
+            <span className="inline-flex rounded-xl border border-fuchsia-200/10 bg-fuchsia-200/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-fuchsia-100/80">
+              <DecryptedText
+                text="AGORA"
+                speed={140}
+                maxIterations={14}
+                sequential
+                revealDirection="center"
+                characters="AGORA_SIGNAL"
+                animateOn="view"
+              />
             </span>
           </div>
-          <h1 className="agora-hero-title leading-[0.88] tracking-normal">
-            <DecryptedText
-              text="AGORA"
-              speed={240}
-              maxIterations={28}
-              sequential
-              revealDirection="center"
-              characters="AGORA_BOARDROOM_SIGNAL_01"
-              animateOn="view"
-              parentClassName="decrypted-title"
-              className="decrypted-title__revealed"
-              encryptedClassName="decrypted-title__encrypted"
-            />
+          <h1 className="max-w-3xl text-5xl font-semibold leading-[1.08] tracking-normal text-white sm:text-6xl xl:text-7xl">
+            Where AI
+            <span className="block">
+              Thinks{" "}
+              <span className="bg-gradient-to-r from-cyan-200 via-sky-400 to-violet-400 bg-clip-text text-transparent">
+                Together
+              </span>
+            </span>
           </h1>
-          <p className="mt-4 text-2xl font-medium text-slate-100 sm:text-3xl">
-            The AI Boardroom
+          <p className="mt-6 max-w-xl text-base leading-7 text-slate-300 sm:text-lg">
+            Start a discussion. Multiple AI agents debate, challenge, and refine ideas so you get
+            the best possible answer.
           </p>
-          <p className="mt-3 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg">
-            Where AI Thinks Together. Start one discussion and watch multiple AI agents debate,
-            revise, summarize, and turn uncertainty into a sharper next action.
-          </p>
-          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/create"
-              className="inline-flex items-center justify-center rounded-full bg-cyan-200 px-6 py-3 text-sm font-semibold text-slate-950 shadow-[0_18px_50px_rgba(34,211,238,0.24)] transition hover:bg-white"
+              className="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-cyan-300 to-violet-500 px-7 py-4 text-sm font-semibold text-slate-950 shadow-[0_18px_50px_rgba(34,211,238,0.24)] transition hover:brightness-110"
             >
               Start Discussion
+              <span aria-hidden="true">→</span>
             </Link>
             <Link
               href="/room"
-              className="inline-flex items-center justify-center rounded-full border border-white/12 bg-white/8 px-6 py-3 text-sm font-semibold text-slate-100 backdrop-blur transition hover:border-white/25 hover:bg-white/12"
+              className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/[0.035] px-7 py-4 text-sm font-semibold text-slate-100 backdrop-blur transition hover:border-white/25 hover:bg-white/10"
             >
-              View mock room
+              Watch Demo
             </Link>
           </div>
         </div>
