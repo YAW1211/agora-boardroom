@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HomeLogoLoop } from "@/components/HomeLogoLoop";
 import DecryptedText from "@/components/react-bits/DecryptedText";
 import { GlassIcons } from "@/components/react-bits/GlassIcons";
 import Hyperspeed from "@/components/react-bits/Hyperspeed";
@@ -18,6 +19,10 @@ export function LandingHero() {
       </div>
       <div className="absolute inset-0 bg-slate-950/38" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_30%,rgba(34,211,238,0.18),transparent_30rem),radial-gradient(circle_at_100%_12%,rgba(244,114,182,0.16),transparent_32rem)]" />
+
+      <div className="relative z-20 mx-auto max-w-7xl">
+        <HomeLogoLoop />
+      </div>
 
       <section className="relative mx-auto grid min-h-[min(760px,calc(100vh-1.5rem))] max-w-7xl content-center gap-8 rounded-3xl border border-white/10 bg-slate-950/42 px-5 py-6 shadow-[0_30px_120px_rgba(0,0,0,0.42)] backdrop-blur-[2px] sm:px-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(340px,0.7fr)] lg:items-center lg:px-10 xl:grid-cols-[minmax(0,1fr)_410px]">
         <div className="relative z-10 max-w-[680px]">
