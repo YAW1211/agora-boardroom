@@ -29,7 +29,7 @@ export function LandingHero() {
               AI Boardroom
             </span>
           </div>
-          <p className="mb-4 text-2xl font-black uppercase tracking-[0.18em] sm:text-3xl">
+          <p className="mb-5 text-4xl font-black uppercase tracking-[0.14em] sm:text-5xl">
             <GradientText animationSpeed={4} colors={["#67e8f9", "#a78bfa", "#f0abfc", "#67e8f9"]}>
               <DecryptedText
                 text="AGORA"
@@ -62,10 +62,12 @@ export function LandingHero() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link
               href="/create"
-              className="inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-cyan-300 to-violet-500 px-7 py-4 text-sm font-semibold text-slate-950 shadow-[0_18px_50px_rgba(34,211,238,0.24)] transition hover:brightness-110"
+              className="group inline-flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-cyan-300 to-violet-500 px-7 py-4 text-sm font-semibold text-slate-950 shadow-[0_18px_50px_rgba(34,211,238,0.24)] transition hover:brightness-110"
             >
               Start Discussion
-              <span aria-hidden="true">-&gt;</span>
+              <span aria-hidden="true" className="text-lg leading-none transition group-hover:translate-x-0.5">
+                →
+              </span>
             </Link>
             <Link
               href="/room"
