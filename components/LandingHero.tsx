@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HomeLogoLoop } from "@/components/HomeLogoLoop";
+import { BrandSignalCard } from "@/components/BrandSignalCard";
 import DecryptedText from "@/components/react-bits/DecryptedText";
 import { GlassIcons } from "@/components/react-bits/GlassIcons";
 import Hyperspeed from "@/components/react-bits/Hyperspeed";
@@ -19,10 +19,6 @@ export function LandingHero() {
       </div>
       <div className="absolute inset-0 bg-slate-950/38" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_0%_30%,rgba(34,211,238,0.18),transparent_30rem),radial-gradient(circle_at_100%_12%,rgba(244,114,182,0.16),transparent_32rem)]" />
-
-      <div className="relative z-20 mx-auto max-w-7xl">
-        <HomeLogoLoop />
-      </div>
 
       <section className="relative mx-auto grid min-h-[min(760px,calc(100vh-1.5rem))] max-w-7xl content-center gap-8 rounded-3xl border border-white/10 bg-slate-950/42 px-5 py-6 shadow-[0_30px_120px_rgba(0,0,0,0.42)] backdrop-blur-[2px] sm:px-8 lg:grid-cols-[minmax(0,0.95fr)_minmax(340px,0.7fr)] lg:items-center lg:px-10 xl:grid-cols-[minmax(0,1fr)_410px]">
         <div className="relative z-10 max-w-[680px]">
@@ -75,42 +71,46 @@ export function LandingHero() {
           </div>
         </div>
 
-        <div className="glass-panel relative z-10 w-full max-w-[410px] justify-self-end overflow-hidden rounded-2xl p-3 sm:p-4 lg:mt-10 xl:mt-4">
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200/70 to-transparent" />
-          <div className="rounded-xl border border-white/10 bg-slate-950/70">
-            <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
-              <div>
-                <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Live session</p>
-                <p className="mt-1 font-medium text-slate-100">Product Strategy Review</p>
+        <div className="relative z-10 grid w-full max-w-[410px] gap-4 justify-self-end lg:mt-8 xl:mt-0">
+          <BrandSignalCard />
+
+          <div className="glass-panel relative overflow-hidden rounded-2xl p-3 sm:p-4">
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-200/70 to-transparent" />
+            <div className="rounded-xl border border-white/10 bg-slate-950/70">
+              <div className="flex items-center justify-between border-b border-white/10 px-4 py-3">
+                <div>
+                  <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Live session</p>
+                  <p className="mt-1 font-medium text-slate-100">Product Strategy Review</p>
+                </div>
+                <span className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-xs text-emerald-100">
+                  Round 2
+                </span>
               </div>
-              <span className="rounded-full border border-emerald-300/20 bg-emerald-300/10 px-3 py-1 text-xs text-emerald-100">
-                Round 2
-              </span>
-            </div>
-            <div className="space-y-3 p-3">
-              {boardMembers.map((member, index) => (
-                <div
-                  key={member.name}
-                  className="rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.07]"
-                >
-                  <div className="flex items-start gap-3">
-                    <span className={`mt-1 h-3 w-3 rounded-full ${member.accent}`} />
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center justify-between gap-3">
-                        <p className="font-semibold text-white">{member.name}</p>
-                        <p className="text-xs text-slate-400">{82 + index * 4}% confidence</p>
+              <div className="space-y-3 p-3">
+                {boardMembers.map((member, index) => (
+                  <div
+                    key={member.name}
+                    className="rounded-xl border border-white/10 bg-white/[0.04] p-3 transition hover:bg-white/[0.07]"
+                  >
+                    <div className="flex items-start gap-3">
+                      <span className={`mt-1 h-3 w-3 rounded-full ${member.accent}`} />
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center justify-between gap-3">
+                          <p className="font-semibold text-white">{member.name}</p>
+                          <p className="text-xs text-slate-400">{82 + index * 4}% confidence</p>
+                        </div>
+                        <p className="mt-2 text-sm leading-6 text-slate-300">{member.line}</p>
                       </div>
-                      <p className="mt-2 text-sm leading-6 text-slate-300">{member.line}</p>
                     </div>
                   </div>
+                ))}
+                <div className="rounded-xl border border-fuchsia-200/15 bg-fuchsia-200/8 p-3">
+                  <p className="text-sm font-semibold text-fuchsia-100">Moderator summary</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-300">
+                    Continue for one more round. The group has converged on a narrow MVP, but
+                    evidence for pricing remains thin.
+                  </p>
                 </div>
-              ))}
-              <div className="rounded-xl border border-fuchsia-200/15 bg-fuchsia-200/8 p-3">
-                <p className="text-sm font-semibold text-fuchsia-100">Moderator summary</p>
-                <p className="mt-2 text-sm leading-6 text-slate-300">
-                  Continue for one more round. The group has converged on a narrow MVP, but evidence
-                  for pricing remains thin.
-                </p>
               </div>
             </div>
           </div>
