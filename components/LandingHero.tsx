@@ -1,9 +1,8 @@
 import Link from "next/link";
+import { LandingSections } from "@/components/LandingSections";
 import { TopNav } from "@/components/TopNav";
 import DecryptedText from "@/components/react-bits/DecryptedText";
-import { GlassIcons } from "@/components/react-bits/GlassIcons";
 import Hyperspeed from "@/components/react-bits/Hyperspeed";
-import { MagicBento } from "@/components/react-bits/MagicBento";
 
 const boardMembers = [
   { name: "ChatGPT", accent: "bg-emerald-300", line: "Frames the strategy" },
@@ -117,19 +116,7 @@ export function LandingHero() {
         </div>
       </section>
 
-      <section id="history" className="mx-auto grid max-w-7xl gap-6 py-6 lg:grid-cols-[minmax(0,1fr)_340px]">
-        <MagicBento />
-        <aside className="glass-panel rounded-2xl p-5">
-          <p className="text-xs font-semibold uppercase tracking-[0.2em] text-cyan-200/75">
-            Previous chats
-          </p>
-          <h2 className="mt-2 text-xl font-semibold text-white">Recover boardroom history</h2>
-          <p className="mt-2 text-sm leading-6 text-slate-400">
-            Glass shortcuts for past AGORA discussions. Static for now, ready for real history later.
-          </p>
-          <GlassIcons />
-        </aside>
-      </section>
+      <LandingSections />
     </main>
   );
 }

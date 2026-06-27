@@ -2,15 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 
 const navItems = [
-  { label: "Boardroom", href: "/room" },
-  { label: "Modes", href: "/create" },
-  { label: "History", href: "#history" },
+  { label: "Features", href: "#features" },
+  { label: "Solutions", href: "#solutions" },
+  { label: "Roadmap", href: "#roadmap" },
+  { label: "About", href: "#about" },
 ];
 
 export function TopNav() {
   return (
     <header className="relative z-30 mx-auto mb-4 max-w-7xl">
-      <nav className="mx-auto flex max-w-[920px] items-center justify-between rounded-2xl border border-white/10 bg-[#15111f]/86 px-3 py-2 shadow-[0_18px_70px_rgba(0,0,0,0.32)] backdrop-blur-xl sm:px-4">
+      <nav className="mx-auto flex max-w-[980px] items-center justify-between rounded-2xl border border-white/10 bg-[#15111f]/86 px-3 py-2 shadow-[0_18px_70px_rgba(0,0,0,0.32)] backdrop-blur-xl sm:px-4">
         <Link href="/" className="flex min-w-0 items-center gap-3 rounded-xl px-2 py-1.5 transition hover:bg-white/[0.06]">
           <span className="relative grid h-9 w-9 shrink-0 place-items-center overflow-hidden rounded-xl border border-cyan-200/20 bg-slate-950 shadow-[0_0_28px_rgba(56,189,248,0.22)]">
             <Image src="/agora-mark.png" alt="" fill sizes="36px" className="object-cover" priority />
@@ -23,7 +24,7 @@ export function TopNav() {
           </span>
         </Link>
 
-        <div className="hidden items-center gap-1 rounded-full border border-white/8 bg-white/[0.035] p-1 md:flex">
+        <div className="hidden items-center gap-1 rounded-full border border-white/8 bg-white/[0.035] p-1 lg:flex">
           {navItems.map((item) => (
             <Link
               key={item.label}
@@ -39,7 +40,7 @@ export function TopNav() {
           href="/create"
           className="inline-flex items-center justify-center rounded-xl bg-white px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-cyan-100"
         >
-          Start
+          Sign Up
         </Link>
       </nav>
     </header>
