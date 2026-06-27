@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { BackLink } from "@/components/BackLink";
 
 export function BoardroomShell({ children }: { children: React.ReactNode }) {
@@ -8,8 +9,8 @@ export function BoardroomShell({ children }: { children: React.ReactNode }) {
         <div className="flex items-center gap-3">
           <BackLink href="/" label="Back to home" />
           <Link href="/" className="group hidden items-center gap-3 sm:flex">
-            <span className="grid h-9 w-9 place-items-center rounded-xl border border-cyan-200/20 bg-cyan-200/10 text-sm font-bold text-cyan-100 transition group-hover:border-cyan-200/40">
-              A
+            <span className="relative grid h-9 w-9 place-items-center overflow-hidden rounded-xl border border-cyan-200/20 bg-slate-950 shadow-[0_0_24px_rgba(56,189,248,0.22)] transition group-hover:border-cyan-200/40">
+              <Image src="/agora-mark.png" alt="" fill sizes="36px" className="object-cover" />
             </span>
             <span>
               <span className="block text-sm font-semibold text-white">Agora</span>

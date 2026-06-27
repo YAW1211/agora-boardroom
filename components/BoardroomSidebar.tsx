@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { AgentAvatar } from "@/components/AgentAvatar";
 import { BackLink } from "@/components/BackLink";
 
@@ -39,7 +40,7 @@ const members = [
     confidence: 91,
     color: "#c4b5fd",
     initials: "MO",
-    avatarSrc: "/avatars/moderator.png",
+    avatarSrc: "/agora-mark.png",
   },
 ];
 
@@ -48,8 +49,8 @@ export function BoardroomSidebar() {
     <aside className="glass-panel flex min-h-0 flex-col overflow-hidden border-r border-white/10 bg-slate-950/72 lg:rounded-l-2xl">
       <div className="border-b border-white/10 px-5 py-4">
         <div className="flex items-center gap-3">
-          <span className="grid h-9 w-9 place-items-center rounded-xl border border-cyan-200/25 bg-cyan-200/12 text-sm font-bold text-cyan-100">
-            A
+          <span className="relative grid h-9 w-9 place-items-center overflow-hidden rounded-xl border border-cyan-200/25 bg-slate-950 shadow-[0_0_24px_rgba(56,189,248,0.22)]">
+            <Image src="/agora-mark.png" alt="" fill sizes="36px" className="object-cover" />
           </span>
           <div>
             <p className="text-sm font-semibold text-white">Agora</p>

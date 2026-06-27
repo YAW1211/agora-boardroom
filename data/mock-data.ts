@@ -43,6 +43,7 @@ const userAgent: Agent = {
   role: "Founder",
   initials: "YO",
   color: "#f9a8d4",
+  avatarSrc: "/avatars/user.png",
 };
 
 const moderatorAgent: Agent = {
@@ -51,7 +52,7 @@ const moderatorAgent: Agent = {
   role: "Board chair",
   initials: "MO",
   color: "#c4b5fd",
-  avatarSrc: "/avatars/moderator.png",
+  avatarSrc: "/agora-mark.png",
 };
 
 export const mockDiscussion = {
