@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { LandingSections } from "@/components/LandingSections";
 import { TopNav } from "@/components/TopNav";
-import DecryptedText from "@/components/react-bits/DecryptedText";
 import GradientText from "@/components/react-bits/GradientText";
 import Hyperspeed from "@/components/react-bits/Hyperspeed";
 
@@ -30,16 +29,11 @@ export function LandingHero() {
             </span>
           </div>
           <p className="mb-5 text-4xl font-black uppercase tracking-[0.14em] sm:text-5xl">
-            <GradientText animationSpeed={4} colors={["#67e8f9", "#a78bfa", "#f0abfc", "#67e8f9"]}>
-              <DecryptedText
-                text="AGORA"
-                speed={130}
-                maxIterations={16}
-                sequential
-                revealDirection="center"
-                characters="AGORA_SIGNAL"
-                animateOn="view"
-              />
+            <GradientText
+              animationSpeed={4}
+              colors={["#f0abfc", "#93c5fd", "#67e8f9", "#a78bfa", "#f0abfc"]}
+            >
+              AGORA
             </GradientText>
           </p>
           <h1 className="max-w-3xl text-5xl font-semibold leading-[1.08] tracking-normal text-white sm:text-6xl xl:text-7xl">
@@ -66,7 +60,7 @@ export function LandingHero() {
             >
               Start Discussion
               <span aria-hidden="true" className="text-lg leading-none transition group-hover:translate-x-0.5">
-                →
+                {"\u2192"}
               </span>
             </Link>
             <Link

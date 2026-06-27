@@ -8,6 +8,8 @@ import { aiMembers, discussionModes, discussionStyles } from "@/data/mock-data";
 export function CreateDiscussionForm() {
   const router = useRouter();
   const [members, setMembers] = useState<string[]>(aiMembers.map((member) => member.id));
+  const [mode, setMode] = useState(discussionModes[0]);
+  const [style, setStyle] = useState(discussionStyles[0]);
 
   function toggleMember(id: string) {
     setMembers((current) =>
@@ -61,23 +63,21 @@ export function CreateDiscussionForm() {
         </label>
 
         <div className="grid gap-5 md:grid-cols-2">
-          <label className="grid gap-2">
-            <span className="text-sm font-medium text-slate-200">Discussion mode</span>
-            <select className="rounded-xl border border-white/10 bg-slate-950/65 px-4 py-3 text-white outline-none transition focus:border-cyan-200/50">
-              {discussionModes.map((mode) => (
-                <option key={mode}>{mode}</option>
-              ))}
-            </select>
-          </label>
+          <GlassSelect
+            label="Discussion mode"
+            name="mode"
+            options={discussionModes}
+            value={mode}
+            onChange={setMode}
+          />
 
-          <label className="grid gap-2">
-            <span className="text-sm font-medium text-slate-200">Discussion style</span>
-            <select className="rounded-xl border border-white/10 bg-slate-950/65 px-4 py-3 text-white outline-none transition focus:border-cyan-200/50">
-              {discussionStyles.map((style) => (
-                <option key={style}>{style}</option>
-              ))}
-            </select>
-          </label>
+          <GlassSelect
+            label="Discussion style"
+            name="style"
+            options={discussionStyles}
+            value={style}
+            onChange={setStyle}
+          />
         </div>
 
         <fieldset className="grid gap-3">
@@ -117,5 +117,71 @@ export function CreateDiscussionForm() {
         Start boardroom
       </button>
     </form>
+  );
+}
+
+function GlassSelect({
+  label,
+  name,
+  options,
+  value,
+  onChange,
+}: {
+  label: string;
+  name: string;
+  options: string[];
+  value: string;
+  onChange: (value: string) => void;
+}) {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <label className="relative grid gap-2">
+      <span className="text-sm font-medium text-slate-200">{label}</span>
+      <input type="hidden" name={name} value={value} />
+      <button
+        type="button"
+        onClick={() => setOpen((current) => !current)}
+        className={`group flex w-full items-center justify-between rounded-xl border bg-slate-950/65 px-4 py-3 text-left text-white outline-none transition ${
+          open ? "border-cyan-200/50 shadow-[0_0_0_3px_rgba(103,232,249,0.08)]" : "border-white/10"
+        }`}
+        aria-expanded={open}
+      >
+        <span>{value}</span>
+        <span className="grid h-7 w-7 place-items-center rounded-lg border border-white/10 bg-white/[0.055] transition group-hover:border-cyan-200/25">
+          <span
+            className={`h-2 w-2 border-b-2 border-r-2 border-cyan-100/80 transition ${
+              open ? "-translate-y-0.5 rotate-[225deg]" : "-translate-y-0.5 rotate-45"
+            }`}
+          />
+        </span>
+      </button>
+
+      {open && (
+        <div className="absolute left-0 right-0 top-full z-30 mt-2 overflow-hidden rounded-xl border border-white/10 bg-slate-950/95 p-1.5 shadow-[0_24px_70px_rgba(0,0,0,0.46)] backdrop-blur-xl">
+          {options.map((option) => {
+            const selected = option === value;
+            return (
+              <button
+                key={option}
+                type="button"
+                onClick={() => {
+                  onChange(option);
+                  setOpen(false);
+                }}
+                className={`flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-left text-sm transition ${
+                  selected
+                    ? "bg-cyan-200/14 text-cyan-50"
+                    : "text-slate-300 hover:bg-white/[0.07] hover:text-white"
+                }`}
+              >
+                <span>{option}</span>
+                {selected && <span className="h-1.5 w-1.5 rounded-full bg-cyan-200 shadow-[0_0_12px_rgba(103,232,249,0.9)]" />}
+              </button>
+            );
+          })}
+        </div>
+      )}
+    </label>
   );
 }
