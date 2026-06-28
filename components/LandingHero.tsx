@@ -37,7 +37,7 @@ export function LandingHero() {
             >
               <DecryptedText
                 text="AGORA"
-                speed={120}
+                speed={230}
                 maxIterations={14}
                 sequential
                 revealDirection="center"
